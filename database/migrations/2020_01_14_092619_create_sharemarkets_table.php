@@ -15,6 +15,8 @@ class CreateSharemarketsTable extends Migration
     {
         Schema::create('sharemarkets', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('companyname');
+            $table->integer('price');
             $table->timestamps();
         });
     }
