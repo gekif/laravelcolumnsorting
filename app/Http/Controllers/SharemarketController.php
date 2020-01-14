@@ -23,4 +23,12 @@ class SharemarketController extends Controller
 
         return redirect('/sharemarket/index')->with('success', 'Stock has been added');
     }
+
+
+    public function displayStock()
+    {
+        $stocks = Sharemarket::sortable()->paginate(5);
+
+        return view('index',compact('stocks'));
+    }
 }
